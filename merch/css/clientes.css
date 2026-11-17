@@ -1,0 +1,307 @@
+/* ==========================================
+   Color Palette Variables (Billie & Sabrina)
+   ========================================== */
+:root {
+    /* Sabrina Carpenter Aesthetic Bases */
+    --bg-page: #fdf6f0;        /* Warm cream background */
+    --bg-card: #ffffff;        /* Pure white for containers */
+    --text-main: #2b1b17;      /* Deep espresso brown text */
+    --text-muted: #7d6356;     /* Muted coffee brown for labels */
+    --border-color: #ede0d4;   /* Soft tan border */
+    
+    /* Billie Eilish Structural Accents */
+    --accent-billie: #0052ff;       /* Electric blue line and focus */
+    --accent-billie-glow: #00d4ff;  /* Radiant cyan hover state */
+    --accent-sabrina: #f4d03f;      /* Honey yellow accents */
+    
+    /* Functional Colors */
+    --accent-danger: #e74c3c;  /* Clean red for deletions */
+    --accent-success: #2ecc71; /* Balanced green for registrations */
+}
+
+/* ==========================================
+   General Setup & Full-Screen Behavior
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    overflow-y: auto; /* Allows smooth scrolling as form elements expand */
+    
+    /* Premium background radial accent graphics */
+    background-image: 
+        radial-gradient(circle at 5% 10%, rgba(0, 82, 255, 0.02) 0%, transparent 40%),
+        radial-gradient(circle at 95% 90%, rgba(244, 208, 63, 0.04) 0%, transparent 40%);
+}
+
+/* ==========================================
+   Header Component
+   ========================================== */
+.encabezado {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.encabezado h2 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Billie's iconic underline accent below the title */
+.encabezado h2::after {
+    content: '';
+    position: absolute;
+    bottom: -17px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-billie);
+}
+
+/* ==========================================
+   Ajustes del Encabezado con Botón Regresar
+   ========================================== */
+.izq-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espacio entre el botón y el título H2 */
+}
+
+.btn-regresar {
+    color: var(--accent-billie); /* Color azul eléctrico de Billie */
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+}
+
+.btn-regresar:hover {
+    color: var(--text-main); /* Cambia al café espresso al pasar el mouse */
+    transform: translateX(-3px); /* Efecto sutil de movimiento hacia la izquierda */
+}
+
+
+.cerrar {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+}
+
+.cerrar:hover {
+    color: var(--accent-danger);
+    background-color: rgba(231, 76, 60, 0.06);
+    border-color: rgba(231, 76, 60, 0.1);
+}
+
+/* ==========================================
+   Layout Layout & Functional Panels
+   ========================================== */
+.seccion-panel {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(43, 27, 23, 0.02);
+}
+
+.seccion-panel h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    border-left: 4px solid var(--accent-sabrina); /* Warm tone border accent */
+    padding-left: 10px;
+}
+
+/* Horizontal form grouping for clean spatial density */
+.form-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-end;
+}
+
+.input-group {
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+   Form Input Elements (Universal input handler)
+   ========================================== */
+label {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    background-color: #fffcf9;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-billie);
+    background-color: var(--bg-card);
+    box-shadow: 0 0 10px rgba(0, 82, 255, 0.1);
+}
+
+/* ==========================================
+   Button Hierarchy Definitions
+   ========================================== */
+button, .btn-accion {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* Action button variations */
+.btn-registrar {
+    background-color: var(--text-main);
+    color: #ffffff;
+}
+
+.btn-registrar:hover {
+    background-color: var(--accent-billie);
+    box-shadow: 0 5px 15px rgba(0, 82, 255, 0.2);
+}
+
+.btn-buscar {
+    background-color: var(--accent-sabrina);
+    color: var(--text-main);
+}
+
+.btn-buscar:hover {
+    background-color: var(--text-main);
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(43, 27, 23, 0.15);
+}
+
+/* Small contextual data actions */
+.btn-modificar {
+    background-color: var(--accent-sabrina);
+    color: var(--text-main);
+    padding: 6px 14px;
+    font-size: 0.8rem;
+}
+
+.btn-modificar:hover {
+    background-color: #f1c40f;
+}
+
+.btn-eliminar {
+    background-color: transparent;
+    color: var(--accent-danger);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    padding: 6px 14px;
+    font-size: 0.8rem;
+}
+
+.btn-eliminar:hover {
+    background-color: var(--accent-danger);
+    color: #ffffff;
+    border-color: var(--accent-danger);
+}
+
+/* ==========================================
+   Data Presentation Table (Search Output)
+   ========================================== */
+.tabla-resultados {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.tabla-resultados th {
+    background-color: #fffcf9;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tabla-resultados td {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.tabla-resultados tr:hover td {
+    background-color: rgba(237, 224, 212, 0.15); /* Soft line highlighter */
+}
+
+.acciones-celda {
+    display: flex;
+    gap: 8px;
+}
+
+/* ==========================================
+   Dynamic Modification Sub-Panel
+   ========================================== */
+.panel-modificar {
+    border: 2px dashed var(--accent-sabrina); /* Indicates editable container dependency */
+    background-color: #fffdfa;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,145 @@
+:root {
+    --bg-page: #fdf6f0;        /* Blanco crema cálido (Sabrina) */
+    --bg-card: #ffffff;        /* Blanco puro para los elementos */
+    --text-main: #2b1b17;      /* Marrón espresso para textos principales */
+    --text-muted: #7d6356;     /* Marrón café suave */
+    --border-color: #ede0d4;   /* Borde suave estético */
+    
+    --accent-billie: #0052ff;  /* Azul eléctrico intenso (Billie) */
+    --accent-sabrina: #f4d03f; /* Amarillo miel (Sabrina) */
+    --accent-danger: #e74c3c;  
+    
+    --btn-text-dark: #2b1b17;  
+    --btn-text-light: #ffffff; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    /* Fondo con gradientes premium difuminados */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 82, 255, 0.03) 0%, transparent 45%),
+        radial-gradient(circle at 90% 80%, rgba(244, 208, 63, 0.05) 0%, transparent 45%);
+}
+
+.encabezado {
+    width: 100%;
+    max-width: 1200px; /* Limita el ancho en pantallas ultra anchas */
+    margin: 0 auto 50px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.encabezado h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+.cerrar {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.cerrar:hover {
+    color: var(--accent-danger);
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+.botones {
+    display: flex;
+    flex-direction: row; /* Coloca los botones uno al lado del otro */
+    gap: 24px;          /* Espaciado elegante entre ellos */
+    width: 100%;
+    max-width: 1100px;  /* Ancho ideal para la fila */
+    margin: auto;       /* Centra vertical y horizontalmente en la pantalla restante */
+}
+
+.botones a {
+    flex: 1;            /* Hace que todos los botones midan exactamente lo mismo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 140px;      /* Altura proporcional y con un look de tarjeta moderna */
+    font-size: 1.25rem; 
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    box-shadow: 0 10px 30px rgba(43, 27, 23, 0.03);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-clientes:hover {
+    background-color: var(--accent-sabrina);
+    color: var(--btn-text-dark);
+    border-color: var(--accent-sabrina);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(244, 208, 63, 0.25);
+}
+
+.btn-productos:hover {
+    background-color: var(--accent-billie);
+    color: var(--btn-text-light);
+    border-color: var(--accent-billie);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0, 82, 255, 0.25);
+}
+
+.btn-ventas:hover {
+    background-color: var(--text-main);
+    color: #ffffff;
+    border-color: var(--text-main);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(43, 27, 23, 0.15);
+}
+
+/* Efecto de clic presionado */
+.botones a:active {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto;
+        height: auto;
+    }
+    .botones {
+        flex-direction: column; /* Se vuelven lista si se ve desde un móvil */
+    }
+    .botones a {
+        height: 80px;
+    }
+}

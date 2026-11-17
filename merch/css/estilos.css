@@ -1,0 +1,147 @@
+/* ==========================================
+   Variables de Color (Fusión Claro: Billie & Sabrina)
+   ========================================== */
+:root {
+    /* Base Clara Retro (Inspirada en Sabrina Carpenter) */
+    --bg-page: #fdf6f0;        /* Blanco crema cálido */
+    --bg-card: #ffffff;        /* Blanco puro para el contenedor */
+    --text-label: #5c4033;     /* Marrón café para etiquetas legibles */
+    --input-bg: #fffbf7;       /* Fondo crema suave para los campos */
+    --input-border: #e0d0c0;   /* Borde sutil café claro */
+    
+    /* Colores de Acento (El choque de ambas eras) */
+    --accent-billie: #0052ff;  /* Azul eléctrico intenso (Hit Me Hard and Soft) */
+    --accent-billie-glow: #00d4ff; /* Cyan brillante para efectos */
+    --accent-sabrina: #f4d03f; /* Amarillo miel / Espresso (Short n' Sweet) */
+    
+    /* Botones y Textos */
+    --text-main: #2b1b17;      /* Marrón espresso para textos principales */
+    --btn-text-dark: #2b1b17;  /* Texto oscuro para máxima legibilidad */
+    --btn-text-light: #ffffff; /* Texto claro */
+}
+
+/* ==========================================
+   Configuración General y Reset
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-page);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==========================================
+   Sección del Encabezado (Logo)
+   ========================================== */
+.encabezado {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.encabezado h2 {
+    color: var(--text-main); /* Estilo elegante de tipografía café espresso */
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--accent-billie); /* Línea de acento estilo Billie */
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* ==========================================
+   Contenedor del Formulario
+   ========================================== */
+.form {
+    background-color: var(--bg-card);
+    padding: 40px 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(92, 64, 51, 0.08); /* Sombra suave tonal */
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--input-border);
+}
+
+/* Estructura interna */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+   Etiquetas (Labels) e Inputs
+   ========================================== */
+label {
+    color: var(--text-label);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-main);
+    background-color: var(--input-bg);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enfoque del input: El borde cambia al azul eléctrico de Billie */
+input:focus {
+    outline: none;
+    border-color: var(--accent-billie);
+    background-color: #ffffff;
+    box-shadow: 0 0 12px rgba(0, 82, 255, 0.15);
+}
+
+/* Medida de seguridad estética para ocultar la contraseña */
+#pass {
+    -webkit-text-security: disc; 
+}
+
+/* ==========================================
+   Botón de Acción (Iniciar Sesión)
+   ========================================== */
+.ingresar {
+    background-color: var(--accent-sabrina); /* Botón inicia en amarillo miel de Sabrina */
+    color: var(--btn-text-dark);
+    border: none;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(244, 208, 63, 0.3);
+}
+
+/* Al pasar el mouse cambia al Azul de Billie */
+.ingresar:hover {
+    background-color: var(--accent-billie);
+    color: var(--btn-text-light); /* Cambia el texto a blanco para contrastar con el azul */
+    box-shadow: 0 4px 20px rgba(0, 82, 255, 0.3);
+}
+
+/* Efecto de clic pulsado */
+.ingresar:active {
+    transform: scale(0.97);
+}
